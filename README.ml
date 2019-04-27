@@ -53,8 +53,24 @@ led:28 - you need to name some GPIO, but it is hardwired to 27 used by both disp
 con2fbmap 1 1
 con2fbmap 1 2
 con2fbmap 1 0
+
+sudo fbset -fb /dev/fb1 -i
+sudo fbset -fb /dev/fb2 -i
+
+tail --bytes 153600 test.bmp > /dev/fb1
+tail --bytes 153600 test.bmp > /dev/fb2
+
 '''
 
+Lets get an X-system running, python3 going ...
+
+'''
+sudo apt-get install xinit python3 python3-pygame python3-rpi.gpio
+'''
+
+'''
+sudo FRAMEBUFFER=/dev/fb1 xinit /usr/bin/python3 /home/pi/rpidualili9341/ui/simpleclock.py
+'''
 
 =references=
 
