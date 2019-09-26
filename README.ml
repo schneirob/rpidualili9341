@@ -62,6 +62,8 @@ tail --bytes 153600 test.bmp > /dev/fb2
 
 '''
 
+configure what you require in /etc/rc.local
+
 Lets get an X-system running, python3 going ...
 
 '''
