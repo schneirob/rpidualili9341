@@ -56,6 +56,12 @@ con2fbmap 1 0
 
 sudo fbset -fb /dev/fb1 -i
 sudo fbset -fb /dev/fb2 -i
+'''
+
+convert your favorite 320x240 image to RGB565 and pipe it to the framebuffer
+
+'''
+convert test.png -flip -type truecolor -define bmp:subtype=RGB565 test.bmp
 
 tail --bytes 153600 test.bmp > /dev/fb1
 tail --bytes 153600 test.bmp > /dev/fb2
