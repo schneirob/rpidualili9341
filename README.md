@@ -1,24 +1,25 @@
 # pin-layout
 
-pin	gpio	name
-1		3.3V
-6		GND
-11	17	(SPI1_CE1)
-12	18	(SPI1_CE0)
-13	27	SPI1_LED / SPI0_LED
-18	24	SPI0_DC
-19	10	SPI0_MOSI
-21	9	SPI0_MISO
-22	25	SPI0_RESET
-23	11	SPI0_SCLK
-24	8	SPI0_CE0
-26	7	(SPI0_CE1)
-33	13	SPI1_RESET
-35	19	SPI1_MISO
-36	16	SPI1_CE2
-37	26	SPI1_DC
-38	20	SPI1_MOSI
-40	21	SPI1_SCLK
+| pin	| gpio	| name	|
+| :---: | :---: | ----- |
+| 1	| 	| 3.3V	|
+| 6	| 	| GND	|
+| 11	| 17	| (SPI1_CE1)	|
+| 12	| 18	| (SPI1_CE0)	|
+| 13	| 27	| SPI1_LED / SPI0_LED	|
+| 18	| 24	| SPI0_DC	|
+| 19	| 10	| SPI0_MOSI	|
+| 21	| 9	| SPI0_MISO	|
+| 22	| 25	| SPI0_RESET	|
+| 23	| 11	| SPI0_SCLK	|
+| 24	| 8	| SPI0_CE0	|
+| 26	| 7	| (SPI0_CE1)	|
+| 33	| 13	| SPI1_RESET	|
+| 35	| 19	| SPI1_MISO	|
+| 36	| 16	| SPI1_CE2	|
+| 37	| 26	| SPI1_DC	|
+| 38	| 20	| SPI1_MOSI	|
+| 40	| 21	| SPI1_SCLK	|
 
 () - not connected, but not usable for other applications
 
