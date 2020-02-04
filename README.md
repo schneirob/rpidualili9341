@@ -5,6 +5,8 @@ GPIO bar of the Raspberry Pi.
 
 The following Raspbery Pi was used for this experiment:
 
+
+| :---: | :---: |
 | Hardware	| BCM2835  |
 | Revision	| a020d3   |
 | Model         | 3B+      |
