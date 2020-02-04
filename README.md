@@ -1,3 +1,5 @@
+# Raspberry Pi with dual ili9341 display
+
 You have a small project, where one small display just isn't enough, but you do
 not want to use the HDMI port (e.g. for reasons of form factor). Then it is
 possible to connect two small displays to the SPI bus that is located on the
@@ -5,8 +7,8 @@ GPIO bar of the Raspberry Pi.
 
 The following Raspbery Pi was used for this experiment:
 
-
-| :---: | :---: |
+| Parameter     | Value    |
+| :-----------: | :------: |
 | Hardware	| BCM2835  |
 | Revision	| a020d3   |
 | Model         | 3B+      |
