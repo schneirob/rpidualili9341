@@ -1,3 +1,22 @@
+You have a small project, where one small display just isn't enough, but you do
+not want to use the HDMI port (e.g. for reasons of form factor). Then it is
+possible to connect two small displays to the SPI bus that is located on the
+GPIO bar of the Raspberry Pi.
+
+The following Raspbery Pi was used for this experiment:
+
+| Hardware	| BCM2835  |
+| Revision	| a020d3   |
+| Model         | 3B+      |
+| Revision      | 1.3      |
+| RAM           | 1GB      |
+| Manufacturer  | Sony UK  |
+
+
+Additionally some cheap SPI displays with ili9341 chipset, cables, ... the
+usual.
+
+
 # pin-layout
 
 | pin	| gpio	| name	|
@@ -68,7 +87,20 @@ tail --bytes 153600 test.bmp > /dev/fb1
 tail --bytes 153600 test.bmp > /dev/fb2
 ~~~
 
-configure what you require in /etc/rc.local
+configure what you require in /etc/rc.local, mine looks like this
+
+~~~bash
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+modprobe fbtft_device name=rpi-display gpios=reset:13,dc:26,led:28 rotate=270 cs=2 busnum=1
+
+con2fbmap 1 1
+
+exit 0
+~~~
 
 Lets get an X-system running, python3 going ...
 
@@ -80,7 +112,13 @@ sudo apt-get install xinit python3 python3-pygame python3-rpi.gpio
 sudo FRAMEBUFFER=/dev/fb1 xinit /usr/bin/python3 /home/pi/rpidualili9341/ui/simpleclock.py
 ~~~
 
+With simpleclock I was able to reach 45 fps on /dev/fb1 and 30 fps on /dev/fb2. Currently I have no explenation for this except maybe signaling problems in the cabeling. 
+
 # references
+
+Thanks to everyone that did cover this topic ahead of me and made this
+information available for me to collect and combine.
+
 
 + https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=194423
 + https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=193722&p=1217930#p1217930
