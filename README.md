@@ -16,6 +16,13 @@ The following Raspbery Pi was used for this experiment:
 Additionally some cheap SPI displays with ili9341 chipset, cables, ... the
 usual.
 
+![Two SPI displays connected to one Raspberry Pi](img/display.jpeg)
+
+![Hardware setup](img/connection.jpeg)
+
+The bottom layer is the raspberry pi, the middle layer is especially handlig
+the SPI connections. The top layer holds three Arduino Micro connected via
+I2C/TWI.
 
 # pin-layout
 
