@@ -1,3 +1,5 @@
+!!! WARNING !!! drivers do not work for Kernel update August 2020, Kernel version 5. Raspbian required, RaspiOS does not work as of Aug. 22, 2020 !!!
+
 # Raspberry Pi with dual ili9341 display
 
 You have a small project, where one small display just isn't enough, but you do
